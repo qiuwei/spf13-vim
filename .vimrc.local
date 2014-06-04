@@ -1,0 +1,115 @@
+" Vim UI {
+" } 
+" Key Mappings{
+inoremap jk <esc>
+inoremap kj <esc>
+inoremap <esc> <nop>
+" Use space to control fold"
+"set foldenable
+"set foldmethod=manual
+"nnoremap <space> @=((foldclosed(line('.')) < 0) ? 'zc':'zo')<CR>
+" }"
+
+
+" latexsuite config
+set grepprg=grep\ -nH\ $*
+let g:tex_flavor = "latex"
+let g:Tex_DefaultTargetFormat='pdf'
+
+"rainbow parenthesis setting{
+"let g:rbpt_colorpairs = [
+    "\ ['brown',       'RoyalBlue3'],
+    "\ ['Darkblue',    'SeaGreen3'],
+    "\ ['darkgray',    'DarkOrchid3'],
+    "\ ['darkgreen',   'firebrick3'],
+    "\ ['darkcyan',    'RoyalBlue3'],
+    "\ ['darkred',     'SeaGreen3'],
+    "\ ['darkmagenta', 'DarkOrchid3'],
+    "\ ['brown',       'firebrick3'],
+    "\ ['gray',        'RoyalBlue3'],
+    "\ ['black',       'SeaGreen3'],
+    "\ ['darkmagenta', 'DarkOrchid3'],
+    "\ ['Darkblue',    'firebrick3'],
+    "\ ['darkgreen',   'RoyalBlue3'],
+    "\ ['darkcyan',    'SeaGreen3'],
+    "\ ['darkred',     'DarkOrchid3'],
+    "\ ['red',         'firebrick3'],
+    "\ ]
+
+"let g:rbpt_colorpairs = [
+    "\ [63,       'RoyalBlue3'],
+    "\ [78,    'SeaGreen3'],
+    "\ [133,    'DarkOrchid3'],
+    "\ [131,   'firebrick3'],
+    "\ [63,    'RoyalBlue3'],
+    "\ [78,     'SeaGreen3'],
+    "\ [133, 'DarkOrchid3'],
+    "\ [131,       'firebrick3'],
+    "\ [63,        'RoyalBlue3'],
+    "\ [78,       'SeaGreen3'],
+    "\ [133, 'DarkOrchid3'],
+    "\ [131,    'firebrick3'],
+    "\ [63,   'RoyalBlue3'],
+    "\ [78,    'SeaGreen3'],
+    "\ [133,     'DarkOrchid3'],
+    "\ [131,         'firebrick3'],
+    "\ ]
+
+let g:rbpt_colorpairs = [
+    \ ['cyan',       'RoyalBlue3'],
+    \ ['yellow',    'SeaGreen3'],
+    \ [74,    'DarkOrchid3'],
+    \ ['red',   'firebrick3'],
+    \ ['green',    'RoyalBlue3'],
+    \ [74,     'SeaGreen3'],
+    \ [214, 'DarkOrchid3'],
+    \ ['magenta',       'firebrick3'],
+    \ [29,        'RoyalBlue3'],
+    \ [115,       'SeaGreen3'],
+    \ [133, 'DarkOrchid3'],
+    \ [131,    'firebrick3'],
+    \ [61,   'RoyalBlue3'],
+    \ [115,    'SeaGreen3'],
+    \ [133,     'DarkOrchid3'],
+    \ [131,         'firebrick3'],
+    \ ]
+let g:rbpt_max = 16
+let g:rbpt_loadcmd_toggle = 0
+
+"use solarized theme{
+"}
+
+au VimEnter * RainbowParenthesesToggle
+au Syntax * RainbowParenthesesLoadRound
+au Syntax * RainbowParenthesesLoadSquare
+au Syntax * RainbowParenthesesLoadBraces
+"}"
+
+"slimux REPL keybindings{
+map <Leader>s :SlimuxREPLSendLine<CR>
+vmap <Leader>s :SlimuxREPLSendSelection<CR>
+map <Leader>a :SlimuxShellLast<CR>
+"}"
+"
+"
+set nolist
+
+"disable the annoying neosnippet scratch window{
+set completeopt-=preview
+"}"
+"
+"disable part of the conceal feature
+"a = conceal accents/ligatures
+"d = conceal delimiters
+"g = conceal Greek
+"m = conceal math symbols
+"s = conceal superscripts/subscripts
+"{
+let g:tex_conceal=""
+"}"
+
+"use c++ std11
+let g:syntastic_cpp_compiler_options = ' -std=c++11'
+
+UnBundle 'myusuf3/numbers.vim'
+set nu
